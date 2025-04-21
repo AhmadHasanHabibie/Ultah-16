@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buat Allin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body
+    style="background-image: url(https://images.unsplash.com/photo-1530273973427-22351773250c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);"
+    class="flex justify-center items-center min-h-screen bg-cover"
+  >
+    <div class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      <!-- Judul di paling atas -->
+      <div class="col-span-full text-center mb-8">
+        <h1 class="text-5xl font-extrabold text-white animate__animated animate__fadeIn">
+          Selamat Ulang Tahun Naftallin 🎉
+        </h1>
+      </div>
+
+      <!-- Kolom 1 -->
+      <div
+        class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8"
+        id="kartu"
+      >
+        <h1 class="text-3xl">Happy Birthday</h1>
+        <h1
+          class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
+        >
+          Naftallin
+        </h1>
+        <button
+          class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+          onclick="ubahKartu()"
+        >
+          Klik Disini Dek
+        </button>
+      </div>
+
+      <!-- Kolom 2 -->
+      <div
+        class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8"
+        id="kartu2"
+      >
+        <h1 class="text-3xl">Happy Birthday</h1>
+        <h1
+          class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
+        >
+          Khalisah
+        </h1>
+        <button
+          class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+          onclick="ubahKartu2()"
+        >
+          Klik Disini Dek
+        </button>
+      </div>
+
+      <!-- Kolom 3 -->
+      <div
+        class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8"
+        id="kartu3"
+      >
+        <h1 class="text-3xl">Mini Games</h1>
+        <h1
+          class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
+        >
+          Games
+        </h1>
+        <button
+          class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+          onclick="ubahKartu3()"
+        >
+          Klik Disini Dek
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+
+      // Fungsi untuk mengubah konten pada kolom 1
+      let kartu = document.getElementById("kartu");
+      function ubahKartu() {
+        kartu.innerHTML = `
+          <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+            Selamat ulang tahun, lin. Semoga tahun ini semakin banyak kebahagiaan,
+            rezeki lancar, dan segala impian jadi kenyataan. Semoga apa yang kamu
+            impikan, bisa jadi lenyataan ya, aamiin! 🎉🎂
+          </h1>
+          <h2 class="mt-3 animate__animated animate__fadeIn">
+            - Dari : Habibie -
+          </h2>
+          <button
+            class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="refresh()"
+          >
+            Tutup
+          </button>
+        `;
+      }
+
+      // Fungsi untuk mengubah konten pada kolom 2
+      let kartu2 = document.getElementById("kartu2");
+      function ubahKartu2() {
+        kartu2.innerHTML = `
+          <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+            Semoga di ulang tahun kali ini, tingginya nambah sedikit, minimal nambah
+            5cm lah ya, aamiin...
+            
+          </h1>
+          <h2 class="mt-3 animate__animated animate__fadeIn">
+            - Dari : Habibie -
+          </h2>
+          <button
+            class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="refresh()"
+          >
+            Tutup
+          </button>
+        `;
+      }
+
+      // Fungsi untuk mengubah konten pada kolom 3
+      function ubahKartu3() {
+  kartu3.innerHTML = `
+    <h1 class="text-xl font-semibold animate__animated animate__zoomIn mb-2">
+      Tebak Angka (1-10)
+    </h1>
+    <p class="mb-2">Aku udah simpan angka rahasia antara 1 sampai 10. Coba tebak!</p>
+    <input
+      type="number"
+      id="tebakan"
+      class="border border-gray-400 rounded px-2 py-1 mb-2 w-full"
+      min="1" max="10"
+    />
+    <button
+      onclick="cekTebakan()"
+      class="p-2 bg-blue-600 text-white rounded mt-2 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+    >
+      Tebak!
+    </button>
+    <p id="hasilTebakan" class="mt-4 font-semibold"></p>
+    <button
+      class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+      onclick="refresh()"
+    >
+      Tutup
+    </button>
+  `;
+
+  // Generate angka random antara 1–10
+  window.angkaRahasia = Math.floor(Math.random() * 10) + 1;
+}
+
+// Fungsi untuk mengecek tebakan
+function cekTebakan() {
+  const tebakan = document.getElementById("tebakan").value;
+  const hasil = document.getElementById("hasilTebakan");
+
+  if (parseInt(tebakan) === window.angkaRahasia) {
+    hasil.textContent = "🎉 Benar! Kamu jago banget!";
+    hasil.classList.add("text-green-600");
+  } else if (tebakan > window.angkaRahasia) {
+    hasil.textContent = "Terlalu tinggi! Coba angka yang lebih kecil.";
+    hasil.classList.add("text-yellow-600");
+  } else {
+    hasil.textContent = "Terlalu rendah! Coba angka yang lebih besar.";
+    hasil.classList.add("text-yellow-600");
+  }
+}
+
+
+      function refresh() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
